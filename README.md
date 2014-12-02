@@ -59,19 +59,15 @@ column (Security Question 1, 2 or 3) exactly as typed below.
 
 #### Security Question 1
 
--   What is the first name of your best friend in high school? (USA)
--   What was the name of your best friend as a teenager? (GBR)
+-   What is the first name of your best friend in high school? 
 -   What was the name of your first pet?
 -   What was the first thing you learned to cook?
--   What was the first film you saw in the theater? (USA)
--   What was the first film you saw in the cinema? (GBR)
--   Where did you go the first time you flew on a plane? (USA)
--   Where did you go the first time you flew on an airplane? (GBR)
+-   What was the first film you saw in the theater? 
+-   Where did you go the first time you flew on a plane? 
 -   What is the last name of your favorite elementary school teacher?
--   What is the name of your favourite elementary or primary school teacher? 
 
 #### Security Question 1 - Great Britain 
--   What was the name of your best friend as a teenager? 
+-   What was the name of your best friend as a teenager?
 -   What was the name of your first pet?
 -   What was the first thing you learned to cook?
 -   What was the first film you saw in the cinema? 
