@@ -59,11 +59,11 @@ column (Security Question 1, 2 or 3) exactly as typed below.
 
 #### Security Question 1
 
--   What is the first name of your best friend in high school? 
+-   What is the first name of your best friend in high school?
 -   What was the name of your first pet?
 -   What was the first thing you learned to cook?
--   What was the first film you saw in the theater? 
--   Where did you go the first time you flew on a plane? 
+-   What was the first film you saw in the theater?
+-   Where did you go the first time you flew on a plane?
 -   What is the last name of your favorite elementary school teacher?
 
 #### Security Question 1 - Great Britain 
