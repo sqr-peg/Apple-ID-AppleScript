@@ -59,12 +59,25 @@ column (Security Question 1, 2 or 3) exactly as typed below.
 
 #### Security Question 1
 
--   What is the first name of your best friend in high school?
+-   What is the first name of your best friend in high school? (USA)
+-   What was the name of your best friend as a teenager? (GBR)
 -   What was the name of your first pet?
 -   What was the first thing you learned to cook?
--   What was the first film you saw in the theater?
--   Where did you go the first time you flew on a plane?
+-   What was the first film you saw in the theater? (USA)
+-   What was the first film you saw in the cinema? (GBR)
+-   Where did you go the first time you flew on a plane? (USA)
+-   Where did you go the first time you flew on an airplane? (GBR)
 -   What is the last name of your favorite elementary school teacher?
+-   What is the name of your favourite elementary or primary school teacher? 
+
+#### Security Question 1 - Great Britain 
+-   What was the name of your best friend as a teenager? 
+-   What was the name of your first pet?
+-   What was the first thing you learned to cook?
+-   What was the first film you saw in the cinema? 
+-   Where did you go the first time you flew on an airplane?
+-   What is the name of your favourite elementary or primary school teacher? 
+
 
 #### Security Question 2
 
@@ -75,6 +88,17 @@ column (Security Question 1, 2 or 3) exactly as typed below.
 -   Who was your favorite film star or character in school?
 -   Who was your favorite singer or band in high school?
 
+
+#### Security Question 2 - Great Britain 
+
+-   What is your dream job?
+-   What is your favourite children's book?
+-   What was the model of your first motorised vehicle?
+-   What was your childhood nickname?
+-   Who was your favourite film star or character in school?
+-   Who was your favourite singer or band in school?
+
+
 #### Security Question 3
 
 -   In what city did your parents meet?
@@ -83,6 +107,16 @@ column (Security Question 1, 2 or 3) exactly as typed below.
 -   What is the name of the first beach you visited?
 -   What was the first album that you purchased?
 -   What is the name of your favorite sports team?
+
+
+#### Security Question 3 - Great Britain 
+
+-   In what city did your parents meet?
+-   What was the name of your first manager?
+-   What is the name of the street where you grew up?
+-   What is the name of the first beach you visited?
+-   What was the first album that you purchased?
+-   What is the name of your favourite sports team?
 
 ### Known Bugs
 
