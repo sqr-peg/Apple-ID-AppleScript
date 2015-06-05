@@ -73,7 +73,7 @@ property processDelay : 1
 property checkFrequency : 0.5
 
 --Used to store supported iTunes versions
-property supportedItunesVersions : {"11.2.2", "11.3", "11.3.1", "11.4"}
+property supportedItunesVersions : {"12.1.2"}
 
 --Used for checking if iTunes is loading a page
 property itunesAccessingString : "Accessing iTunes Store…"
@@ -126,7 +126,7 @@ property accountStatusHeaders : {"Account Status"} --Used to keep track of what 
 
 
 --Supported descriptions of iTunes free button
-property supportedFreeButtonDescriptions : {"$0.00 Free, iBooks", "0,00 € Free, iBooks"}
+property supportedFreeButtonDescriptions : {"$0.00 Get, iBooks", "0,00 € Get, iBooks"}
 
 set userDroppedFile to false
 
@@ -629,7 +629,7 @@ on verifyPage(expectedElementString, expectedElementLocation, expectedElementCou
 			delay masterDelay
 		end repeat*)
 		
-		set elementCount to count every UI element of UI element 1 of scroll area 1 of splitter group 1 of splitter group 1 of window 1 of application process "iTunes"
+		set elementCount to count every UI element of UI element 1 of scroll area 1 of splitter group 1 of window 1 of application process "iTunes"
 		
 		repeat with timeoutLoopCounter from 1 to verificationTimeout --Loop will be ended before reaching verificationTimeout if the expectedElementString is successfully located
 			
@@ -643,9 +643,9 @@ on verifyPage(expectedElementString, expectedElementLocation, expectedElementCou
 				set everyTitle to {}
 				
 				if requiresGroup then
-					set elementToTest to UI element expectedElementLocation of group 1 of UI element 1 of scroll area 1 of splitter group 1 of splitter group 1 of window 1 of application process "iTunes"
+					set elementToTest to UI element expectedElementLocation of group 2 of UI element 1 of scroll area 1 of splitter group 1 of window 1 of application process "iTunes"
 				else
-					set elementToTest to UI element expectedElementLocation of UI element 1 of scroll area 1 of splitter group 1 of splitter group 1 of window 1 of application process "iTunes"
+					set elementToTest to UI element expectedElementLocation of UI element 1 of scroll area 1 of splitter group 1 of window 1 of application process "iTunes"
 				end if
 				
 				set elementProperties to properties of elementToTest
@@ -783,7 +783,7 @@ on installIbooks()
 			delay (masterDelay * processDelay)
 			tell application "System Events"
 				try
-					set freeButton to button 1 of group 2 of UI element 1 of scroll area 1 of splitter group 1 of splitter group 1 of window "iTunes" of application process "iTunes"
+					set freeButton to button 1 of group 3 of UI element 1 of scroll area 1 of splitter group 1 of window "iTunes" of application process "iTunes"
 					
 					-- check if free button is supported
 					set freeButtonDescription to description of freeButton
@@ -855,7 +855,7 @@ on ClickContinueOnPageOne()
 		
 		try
 			tell application "System Events"
-				set contButton to button "Continue" of UI element 1 of scroll area 1 of splitter group 1 of splitter group 1 of window 1 of application process "iTunes"
+				set contButton to button "Continue" of UI element 1 of scroll area 1 of splitter group 1 of window 1 of application process "iTunes"
 				if title of contButton is "Continue" then
 					click contButton
 				else
@@ -895,8 +895,8 @@ on AgreeToTerms()
 			--Check box
 			
 			--start localization
-			set curCheckBox to "I have read and agree to these terms and conditions."
-			set curCheckBoxNum to 4
+			set curCheckBox to 1
+			set curCheckBoxNum to 5
 			
 			if iTunesCountryCode is "POL" then
 				set curCheckBox to "Aby móc używać tej usługi, zapoznaj się z przedstawionymi warunkami i zasadami oraz wyraź na nie zgodę."
@@ -905,14 +905,10 @@ on AgreeToTerms()
 			--end localization
 			
 			try
-				set agreeCheckbox to checkbox curCheckBox of group curCheckBoxNum of UI element 1 of scroll area 1 of splitter group 1 of splitter group 1 of window 1 of application process "iTunes"
+				set agreeCheckbox to checkbox curCheckBox of group curCheckBoxNum of UI element 1 of scroll area 1 of splitter group 1 of window 1 of application process "iTunes"
 				set buttonVerification to title of agreeCheckbox
 				
-				if buttonVerification is curCheckBox then
-					click agreeCheckbox
-				else
-					set errorList to errorList & "Unable to locate and check box  #1 ''I have read and agree to these terms and conditions.''"
-				end if
+				click agreeCheckbox
 			on error
 				set errorList to errorList & "Unable to locate and check box #2 ''I have read and agree to these terms and conditions.''"
 			end try
@@ -924,7 +920,7 @@ on AgreeToTerms()
 			
 			if scriptAction is "Continue" then
 				try
-					set agreeButton to button "Agree" of UI element 1 of scroll area 1 of splitter group 1 of splitter group 1 of window 1 of application process "iTunes"
+					set agreeButton to button "Agree" of UI element 1 of scroll area 1 of splitter group 1 of window 1 of application process "iTunes"
 					set buttonVerification to title of agreeButton
 					if buttonVerification is "Agree" then
 						click agreeButton
@@ -1018,24 +1014,24 @@ on ProvideAppleIdDetails(appleIdEmail, appleIdPassword, appleIdSecretQuestion1, 
 		set pageVerification to verifyPage("Provide Apple ID Details", "Provide Apple ID Details", 0, (netDelay * processDelay), false)
 		if pageVerification is "Verified" then
 			tell application "System Events"
-				set theForm to UI element 1 of scroll area 1 of splitter group 1 of splitter group 1 of window 1 of application process "iTunes"
+				set theForm to UI element 1 of scroll area 1 of splitter group 1 of window 1 of application process "iTunes"
 				-----------
-				tell me to FillInField("Email", text field "email@example.com" of group 2 of theForm, appleIdEmail)
+				tell me to FillInField("Email", text field 1 of group 3 of theForm, appleIdEmail)
 				-----------
-				tell me to FillInKeystroke("Password", text field "Password" of group 2 of group 3 of theForm, appleIdPassword)
+				tell me to FillInKeystroke("Password", text field 1 of group 2 of group 4 of theForm, appleIdPassword)
 				-----------
-				tell me to FillInKeystroke("Retype your password", text field "Retype your password" of group 4 of group 3 of theForm, appleIdPassword)
+				tell me to FillInKeystroke("Retype your password", text field 1 of group 4 of group 4 of theForm, appleIdPassword)
 				-----------
-				tell me to FillInPopup("First Security Question", pop up button 1 of group 1 of group 6 of theForm, appleIdSecretQuestion1, 5)
-				tell me to FillInField("First Answer", text field 1 of group 2 of group 6 of theForm, appleIdSecretAnswer1)
+				tell me to FillInPopup("First Security Question", pop up button 1 of group 1 of group 7 of theForm, appleIdSecretQuestion1, 5)
+				tell me to FillInField("First Answer", text field 1 of group 2 of group 7 of theForm, appleIdSecretAnswer1)
 				-----------
-				tell me to FillInPopup("Second Security Question", pop up button 1 of group 1 of group 7 of theForm, appleIdSecretQuestion2, 5)
-				tell me to FillInField("Second Answer", text field 1 of group 2 of group 7 of theForm, appleIdSecretAnswer2)
+				tell me to FillInPopup("Second Security Question", pop up button 1 of group 1 of group 8 of theForm, appleIdSecretQuestion2, 5)
+				tell me to FillInField("Second Answer", text field 1 of group 2 of group 8 of theForm, appleIdSecretAnswer2)
 				-----------
-				tell me to FillInPopup("Third Security Question", pop up button 1 of group 1 of group 8 of theForm, appleIdSecretQuestion3, 5)
-				tell me to FillInField("Third Answer", text field 1 of group 2 of group 8 of theForm, appleIdSecretAnswer3)
+				tell me to FillInPopup("Third Security Question", pop up button 1 of group 1 of group 9 of theForm, appleIdSecretQuestion3, 5)
+				tell me to FillInField("Third Answer", text field 1 of group 2 of group 9 of theForm, appleIdSecretAnswer3)
 				-----------
-				tell me to FillInField("Optional Rescue Email", text field "rescue@example.com" of group 11 of theForm, rescueEmail)
+				tell me to FillInField("Optional Rescue Email", text field 1 of group 12 of theForm, rescueEmail)
 				-----------
 				--start localization
 				set curMonthPos to 1
@@ -1046,12 +1042,12 @@ on ProvideAppleIdDetails(appleIdEmail, appleIdPassword, appleIdSecretQuestion1, 
 				end if
 				--end localization
 				
-				tell me to FillInPopup("Month", pop up button 1 of group curMonthPos of group 13 of theForm, userBirthMonth, 12)
-				tell me to FillInPopup("Day", pop up button 1 of group curDayPos of group 13 of theForm, userBirthDay, 31)
-				tell me to FillInField("Year", text field "Year" of group 3 of group 13 of theForm, userBirthYear)
+				tell me to FillInPopup("Month", pop up button 1 of group curMonthPos of group 14 of theForm, userBirthMonth, 12)
+				tell me to FillInPopup("Day", pop up button 1 of group curDayPos of group 14 of theForm, userBirthDay, 31)
+				tell me to FillInField("Year", text field 1 of group 3 of group 14 of theForm, userBirthYear)
 				-----------
-				set releaseCheckbox to checkbox "New releases and additions to the iTunes Store." of group 15 of theForm
-				set newsCheckbox to checkbox "News, special offers, and information about related products and services from Apple." of group 16 of theForm
+				set releaseCheckbox to checkbox 1 of group 16 of theForm
+				set newsCheckbox to checkbox 1 of group 17 of theForm
 				if value of releaseCheckbox is 1 then
 					tell me to ClickThis("New releases and additions to the iTunes Store.", releaseCheckbox)
 				end if
@@ -1101,32 +1097,32 @@ on ProvidePaymentDetails(userFirstName, userLastName, addressStreet, addressCity
 		tell application "System Events"
 			try
 				set frontmost of application process "iTunes" to true --Verify that iTunes is the front window before performing keystroke event
-				set focused of pop up button 1 of group 1 of group 7 of theForm to true
+				set focused of pop up button 1 of group 1 of group 8 of theForm to true
 				keystroke "Mr"
 			on error
 				set errorList to errorList & "Unable to set ''Title' to 'Mr.'"
 			end try
 			-----------
 			try
-				set value of text field "First name" of group 1 of group 8 of theForm to userFirstName
+				set value of text field 1 of group 1 of group 9 of theForm to userFirstName
 			on error
 				set errorList to errorList & "Unable to set ''First Name'' field to " & userFirstName
 			end try
 			-----------
 			try
-				set value of text field "Last name" of group 2 of group 8 of theForm to userLastName
+				set value of text field 1 of group 2 of group 9 of theForm to userLastName
 			on error
 				set errorList to errorList & "Unable to set ''Last Name'' field to " & userLastName
 			end try
 			-----------
 			try
-				set value of text field "Street" of group 1 of group 9 of theForm to addressStreet
+				set value of text field 1 of group 1 of group 10 of theForm to addressStreet
 			on error
 				set errorList to errorList & "Unable to set ''Street Address'' field to " & addressStreet
 			end try
 			-----------
 			--start localization
-			set curCityFieldName to "City"
+			set curCityFieldName to 1
 			set curCityFieldPos to 1
 			if iTunesCountryCode is "POL" then
 				set curCityFieldName to "Town"
@@ -1134,7 +1130,7 @@ on ProvidePaymentDetails(userFirstName, userLastName, addressStreet, addressCity
 			end if
 			--end localization
 			try
-				set value of text field curCityFieldName of group curCityFieldPos of group 10 of theForm to addressCity
+				set value of text field curCityFieldName of group curCityFieldPos of group 11 of theForm to addressCity
 			on error
 				set errorList to errorList & "Unable to set ''City'' field to " & addressCity
 			end try
@@ -1149,7 +1145,7 @@ on ProvidePaymentDetails(userFirstName, userLastName, addressStreet, addressCity
 			if enableProvince is true then
 				try
 					set frontmost of application process "iTunes" to true --Verify that iTunes is the front window before performking keystroke event
-					set focused of pop up button "Select a state" of group 2 of group 10 of theForm to true
+					set focused of pop up button 1 of group 2 of group 11 of theForm to true
 					keystroke addressState
 				on error
 					set errorList to errorList & "Unable to set ''State'' drop-down to " & addressState
@@ -1157,7 +1153,7 @@ on ProvidePaymentDetails(userFirstName, userLastName, addressStreet, addressCity
 			end if
 			-----------
 			--start localization
-			set curPostalCodeFieldName to "Zip"
+			set curPostalCodeFieldName to 1
 			set curPostalCodeFieldPos to 3
 			if iTunesCountryCode is "POL" then
 				set curPostalCodeFieldName to "Postcode"
@@ -1166,19 +1162,19 @@ on ProvidePaymentDetails(userFirstName, userLastName, addressStreet, addressCity
 			--end localization
 			
 			try
-				set value of text field curPostalCodeFieldName of group curPostalCodeFieldPos of group 10 of theForm to addressZip
+				set value of text field curPostalCodeFieldName of group curPostalCodeFieldPos of group 11 of theForm to addressZip
 			on error
 				set errorList to errorList & "Unable to set ''Postal Code'' field to " & addressZip
 			end try
 			-----------
 			try
-				set value of text field "Area code" of group 1 of group 11 of theForm to phoneAreaCode
+				set value of text field 1 of group 1 of group 12 of theForm to phoneAreaCode
 			on error
 				set errorList to errorList & "Unable to set ''Area Code'' field to " & phoneAreaCode
 			end try
 			-----------
 			try
-				set value of text field "Phone" of group 2 of group 11 of theForm to phoneNumber
+				set value of text field 1 of group 2 of group 12 of theForm to phoneNumber
 			on error
 				set errorList to errorList & "Unable to set ''Phone Number'' field to " & phoneNumber
 			end try
