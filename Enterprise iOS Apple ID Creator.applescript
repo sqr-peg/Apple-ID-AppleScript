@@ -707,8 +707,13 @@ on SignOutItunesAccount()
 			repeat until description of scroll area 1 of window 1 of application process "iTunes" is "Apple logo"
 				delay (masterDelay * processDelay)
 			end repeat
-			
-			set storeMenu to menu "Store" of menu bar item "Store" of menu bar 1 of application process "iTunes"
+		
+      -- in iTunes 12.2.0, this is called the Account menu
+      if menu "Store" of menu bar item "Store" of menu bar  1 of application process "iTunes" then
+			  set storeMenu to menu "Store" of menu bar item "Store" of menu bar 1 of application process "iTunes"
+      else if menu "Account" of menu bar item "Account" of menu bar 1 of application process "iTunes" then
+        set storeMenu to menu "Account" of menu bar item "Account" of menu bar 1 of application process "iTunes"
+      end if
 			set storeMenuItems to title of every menu item of storeMenu
 		end tell
 		
