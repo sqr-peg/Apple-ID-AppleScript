@@ -114,7 +114,7 @@ The base for this script was created by [Aaron Freimark][1]
 Updated version brought to you by [Brandon Usher][]
 
   [AppleScript]: http://developer.apple.com/applescript/
-  [iTunes 12.1.2]: http://www.apple.com/itunes/
+  [iTunes 12.1.2 or 12.2]: http://www.apple.com/itunes/
   [UI Scripting]: http://www.mactech.com/articles/mactech/Vol.21/21.06/UserInterfaceScripting/index.html
   [strong password requirements]: http://support.apple.com/kb/TS1728
   [Greg Moore]: http://www.enterpriseios.com/users/Eight_Quarter_Bit
