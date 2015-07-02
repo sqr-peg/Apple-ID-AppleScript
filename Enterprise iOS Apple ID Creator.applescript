@@ -73,7 +73,7 @@ property processDelay : 1
 property checkFrequency : 0.5
 
 --Used to store supported iTunes versions
-property supportedItunesVersions : {"12.1.2"}
+property supportedItunesVersions : {"12.1.2", "12.2"}
 
 --Used for checking if iTunes is loading a page
 property itunesAccessingString : "Accessing iTunes Store…"
