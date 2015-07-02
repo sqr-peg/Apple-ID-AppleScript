@@ -1027,13 +1027,13 @@ on ProvideAppleIdDetails(appleIdEmail, appleIdPassword, appleIdSecretQuestion1, 
 				-----------
 				tell me to FillInKeystroke("Retype your password", text field 1 of group 4 of group 4 of theForm, appleIdPassword)
 				-----------
-				tell me to FillInPopup("First Security Question", pop up button 1 of group 1 of group 7 of theForm, appleIdSecretQuestion1, 5)
+				tell me to FillInPopup("First Security Question", pop up button 1 of group 1 of group 7 of theForm, appleIdSecretQuestion1, 6)
 				tell me to FillInField("First Answer", text field 1 of group 2 of group 7 of theForm, appleIdSecretAnswer1)
 				-----------
-				tell me to FillInPopup("Second Security Question", pop up button 1 of group 1 of group 8 of theForm, appleIdSecretQuestion2, 5)
+				tell me to FillInPopup("Second Security Question", pop up button 1 of group 1 of group 8 of theForm, appleIdSecretQuestion2, 6)
 				tell me to FillInField("Second Answer", text field 1 of group 2 of group 8 of theForm, appleIdSecretAnswer2)
 				-----------
-				tell me to FillInPopup("Third Security Question", pop up button 1 of group 1 of group 9 of theForm, appleIdSecretQuestion3, 5)
+				tell me to FillInPopup("Third Security Question", pop up button 1 of group 1 of group 9 of theForm, appleIdSecretQuestion3, 6)
 				tell me to FillInField("Third Answer", text field 1 of group 2 of group 9 of theForm, appleIdSecretAnswer3)
 				-----------
 				tell me to FillInField("Optional Rescue Email", text field 1 of group 12 of theForm, rescueEmail)
