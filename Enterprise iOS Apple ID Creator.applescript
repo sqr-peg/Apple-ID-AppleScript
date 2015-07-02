@@ -709,9 +709,9 @@ on SignOutItunesAccount()
 			end repeat
 		
       -- in iTunes 12.2.0, this is called the Account menu
-      if menu "Store" of menu bar item "Store" of menu bar  1 of application process "iTunes" then
+      if menu "Store" of menu bar item "Store" of menu bar  1 of application process "iTunes" exists then
 			  set storeMenu to menu "Store" of menu bar item "Store" of menu bar 1 of application process "iTunes"
-      else if menu "Account" of menu bar item "Account" of menu bar 1 of application process "iTunes" then
+      else if menu "Account" of menu bar item "Account" of menu bar 1 of application process "iTunes" exists then
         set storeMenu to menu "Account" of menu bar item "Account" of menu bar 1 of application process "iTunes"
       end if
 			set storeMenuItems to title of every menu item of storeMenu
