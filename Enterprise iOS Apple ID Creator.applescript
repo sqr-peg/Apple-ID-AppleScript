@@ -73,7 +73,7 @@ property processDelay : 1
 property checkFrequency : 0.5
 
 --Used to store supported iTunes versions
-property supportedItunesVersions : {"12.1.2"}
+property supportedItunesVersions : {"12.1.2", "12.2"}
 
 --Used for checking if iTunes is loading a page
 property itunesAccessingString : "Accessing iTunes Store…"
@@ -707,8 +707,13 @@ on SignOutItunesAccount()
 			repeat until description of scroll area 1 of window 1 of application process "iTunes" is "Apple logo"
 				delay (masterDelay * processDelay)
 			end repeat
-			
-			set storeMenu to menu "Store" of menu bar item "Store" of menu bar 1 of application process "iTunes"
+		
+      -- in iTunes 12.2.0, this is called the Account menu
+      if menu "Store" of menu bar item "Store" of menu bar  1 of application process "iTunes" exists then
+			  set storeMenu to menu "Store" of menu bar item "Store" of menu bar 1 of application process "iTunes"
+      else if menu "Account" of menu bar item "Account" of menu bar 1 of application process "iTunes" exists then
+        set storeMenu to menu "Account" of menu bar item "Account" of menu bar 1 of application process "iTunes"
+      end if
 			set storeMenuItems to title of every menu item of storeMenu
 		end tell
 		
@@ -1022,13 +1027,13 @@ on ProvideAppleIdDetails(appleIdEmail, appleIdPassword, appleIdSecretQuestion1, 
 				-----------
 				tell me to FillInKeystroke("Retype your password", text field 1 of group 4 of group 4 of theForm, appleIdPassword)
 				-----------
-				tell me to FillInPopup("First Security Question", pop up button 1 of group 1 of group 7 of theForm, appleIdSecretQuestion1, 5)
+				tell me to FillInPopup("First Security Question", pop up button 1 of group 1 of group 7 of theForm, appleIdSecretQuestion1, 6)
 				tell me to FillInField("First Answer", text field 1 of group 2 of group 7 of theForm, appleIdSecretAnswer1)
 				-----------
-				tell me to FillInPopup("Second Security Question", pop up button 1 of group 1 of group 8 of theForm, appleIdSecretQuestion2, 5)
+				tell me to FillInPopup("Second Security Question", pop up button 1 of group 1 of group 8 of theForm, appleIdSecretQuestion2, 6)
 				tell me to FillInField("Second Answer", text field 1 of group 2 of group 8 of theForm, appleIdSecretAnswer2)
 				-----------
-				tell me to FillInPopup("Third Security Question", pop up button 1 of group 1 of group 9 of theForm, appleIdSecretQuestion3, 5)
+				tell me to FillInPopup("Third Security Question", pop up button 1 of group 1 of group 9 of theForm, appleIdSecretQuestion3, 6)
 				tell me to FillInField("Third Answer", text field 1 of group 2 of group 9 of theForm, appleIdSecretAnswer3)
 				-----------
 				tell me to FillInField("Optional Rescue Email", text field 1 of group 12 of theForm, rescueEmail)
