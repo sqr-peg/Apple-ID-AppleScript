@@ -1,10 +1,6 @@
 Batch Apple ID Creator
 ----------------------
 
-[![Stories in Backlog](https://badge.waffle.io/brandonusher/Apple-ID-AppleScript.svg?label=Backlog&title=Backlog)](http://waffle.io/brandonusher/Apple-ID-AppleScript)
-[![Stories in Ready](https://badge.waffle.io/brandonusher/apple-id-applescript.svg?label=Ready&title=Ready)](http://waffle.io/brandonusher/apple-id-applescript)
-[![Stories in Progress](https://badge.waffle.io/brandonusher/apple-id-applescript.svg?label=In%20Progress&title=In%20Progress)](http://waffle.io/brandonusher/apple-id-applescript)
-
 If possible, please donate as I spend my free time fixing and upkeeping this script.
 
 BTC: 12afnPSYfnbzV8wgu6zv69j9eMTtV2GktC
@@ -24,7 +20,7 @@ script without actually creating the Apple ID.
     representative to request that your IP address is whitelisted for a
     short time.
 -   Being [AppleScript][], this runs only on Macs.
--   [iTunes 12.1.2 or 12.2][] is currently required. Future versions may break the
+-   [iTunes][] 12.1.2, 12.2, 12.2.1, 12.2.2 is currently required. Future versions may break the
     script.
 -   [UI Scripting][] allows us to script otherwise non-scriptbale
     interfaces. Turn this on in System Preferences \> Accessibility and
@@ -40,7 +36,7 @@ A template CSV file is included. Create csv file. Then run the script.
 #### CSV file tips
 
 * keep the column headers,
-* fill out all columns, 
+* fill out all columns,
 * use comma as a column separator,
 * don't leave empty lines,
 * use MS Excel or Numbers to create file,
@@ -114,7 +110,7 @@ The base for this script was created by [Aaron Freimark][1]
 Updated version brought to you by [Brandon Usher][]
 
   [AppleScript]: http://developer.apple.com/applescript/
-  [iTunes 12.1.2 or 12.2]: http://www.apple.com/itunes/
+  [iTunes]: http://www.apple.com/itunes/
   [UI Scripting]: http://www.mactech.com/articles/mactech/Vol.21/21.06/UserInterfaceScripting/index.html
   [strong password requirements]: http://support.apple.com/kb/TS1728
   [Greg Moore]: http://www.enterpriseios.com/users/Eight_Quarter_Bit
