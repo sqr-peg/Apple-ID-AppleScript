@@ -20,7 +20,7 @@ script without actually creating the Apple ID.
     representative to request that your IP address is whitelisted for a
     short time.
 -   Being [AppleScript][], this runs only on Macs.
--   [iTunes][] 12.1.2, 12.2, 12.2.1, 12.2.2 is currently required. Future versions may break the
+-   [iTunes][] 12.1.2, 12.2, 12.2.1, 12.2.2 or 12.3 is currently required. Future versions may break the
     script.
 -   [UI Scripting][] allows us to script otherwise non-scriptbale
     interfaces. Turn this on in System Preferences \> Accessibility and
