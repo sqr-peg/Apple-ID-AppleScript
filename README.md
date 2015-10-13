@@ -5,6 +5,8 @@ If possible, please donate as I spend my free time fixing and upkeeping this scr
 
 BTC: 12afnPSYfnbzV8wgu6zv69j9eMTtV2GktC
 
+Anything else: [Cash.me](https://cash.me/$brandonusher)
+
 ### Purpose & Features
 
 Deploying a great quantity of iOS devices means creating a great
