@@ -5,7 +5,7 @@ If possible, please donate as I spend my free time fixing and upkeeping this scr
 
 BTC: 12afnPSYfnbzV8wgu6zv69j9eMTtV2GktC
 
-Anything else: [Cash.me](https://cash.me/$brandonusher)
+[@brandonusher](https://github.com/brandonusher): <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=364T3HTGPQUHN"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="[paypal]" /></a>
 
 ### Purpose & Features
 
